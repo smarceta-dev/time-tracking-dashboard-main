@@ -1,0 +1,22 @@
+{
+  "name": "time-tracking-dashboard-main",
+  "version": "1.0.0",
+  "description": "Tracking time spent on activities",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smcloud-dev/time-tracking-dashboard-main.git"
+  },
+  "author": "Sanjin Marceta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smcloud-dev/time-tracking-dashboard-main/issues"
+  },
+  "homepage": "https://github.com/smcloud-dev/time-tracking-dashboard-main#readme",
+  "dependencies": {
+    "node-sass": "^8.0.0"
+  }
+}
