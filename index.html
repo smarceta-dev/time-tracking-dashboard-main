@@ -12,19 +12,38 @@
 
 </head>
 <body>
-
-  Report for
-  Jeremy Robson
+  <div>
+    Report for
+    Jeremy Robson
+  </div>
 
   Daily
   Weekly
   Monthly
 
- 
+  <div class="activity-card">
+    <div class="activity-card__img-container">
+      <img class="activity-card__img" src="images/icon-play.svg" alt="Play Icon">
+    </div>
+
+    <div class="activity-card__content">
+      <div class="activity-card__content__header-container">
+        <p id="card-title">Work</p>
+        <img class="activity-card__content__header-container__ellipsis" src="images/icon-ellipsis.svg" alt="icon-ellipsis">
+      </div>
+
+      <p id="current-hours">32hrs</p>
+      <p id="prev-hours">Last week - 36hrs</p>
+    </div>
+    
+  </div>
+
+ <app-activity></app-activity>
   
-  <div class="attribution">
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Sanjin Marceta</a>.
-  </div>
+  </footer>
+  <script src="/javascript/script.js"></script>
 </body>
 </html>

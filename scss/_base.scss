@@ -23,7 +23,7 @@
     --desktop-width: 1440px;
 
     // Font
-    --font-size-card-title: 1.8em;
+    --font-size-card-title: 1.6em;
 
 }
 
@@ -40,5 +40,11 @@
 
 html {
     font-size: 62.5%; //1 rem = 10px, 10px / 16 (browser default) = 62.5%
+}
+
+body {
+
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
 }
 

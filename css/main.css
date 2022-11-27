@@ -1,8 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
+.activity-card {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  height: 20rem; }
+  .activity-card__img-container {
+    position: relative;
+    width: 100%;
+    height: 8em;
+    background-color: var(--color-soft-blue-play);
+    border-radius: 1em;
+    z-index: -1; }
+  .activity-card__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4em;
+    height: 4em; }
+  .activity-card__content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: var(--color-dark-blue);
+    color: white;
+    border-radius: 1em;
+    flex: 1 0 80%;
+    z-index: 1;
+    transform: translateY(-1.5rem);
+    padding: 1.5rem; }
+    .activity-card__content__header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: var(--font-size-card-title); }
+      .activity-card__content__header-container__ellipsis {
+        height: 0.25em; }
+    .activity-card__content #current-hours {
+      font-size: 3rem; }
+    .activity-card__content #prev-hours {
+      color: var(--color-desaturated-blue); }
 
 :root {
   --color-primary-blue: hsl(246, 80%, 60%);
@@ -18,7 +55,7 @@
   --color-pale-blue: hsl(236, 100%, 87%);
   --mobile-width: 375px;
   --desktop-width: 1440px;
-  --font-size-card-title: 1.8em; }
+  --font-size-card-title: 1.6em; }
 
 * {
   margin: 0;
@@ -31,3 +68,7 @@
 
 html {
   font-size: 62.5%; }
+
+body {
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif; }
