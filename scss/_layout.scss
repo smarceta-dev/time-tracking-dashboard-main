@@ -1,58 +1,31 @@
-.activity-card{
+.container {
+    width: 50%;
+    height: 100vh;
+    margin: auto;
     display: flex;
-    flex-direction: column;
-    width: 20rem;
-    height: 20rem;
+    justify-content: center;
+    align-items: center;
 
-    &__img-container{
-        position: relative;
-        width: 100%;
-        height: 8em;
-        background-color: var(--color-soft-blue-play) ;
-        border-radius: 1em;
-        z-index: -1;
-    }
-
-    &__img{
-        position: absolute;
-        top:0;
-        right:0;
-        width: 4em;
-        height: 4em;
-    }
-    
-    &__content {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        background-color: var(--color-dark-blue);
-        color: white;
-        border-radius: 1em;
-        flex: 1 0 80%;
-        z-index: 1;
-        transform: translateY(-1.5rem);
-        padding: 1.5rem;
-
-
-        &__header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: var(--font-size-card-title);
-
-            &__ellipsis {
-                height: 0.25em;
-            }
-        }
-
-        #current-hours {
-            font-size: 3rem;
-        }
-        
-        #prev-hours { 
-            color: var(--color-desaturated-blue);
-        }
-    }
 }
 
+.inner-container {
+    display: flex;
+    
+}
+
+footer {
+    text-align: center;
+}
+
+#card-container {
+    display: flex;
+    flex-direction: row;
+    
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.user-card {
+    flex: 1 0 18%;
+}
