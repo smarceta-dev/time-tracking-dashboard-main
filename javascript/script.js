@@ -1,15 +1,43 @@
 class Activity extends HTMLElement {
 
-    constructor(name) {
+    constructor() {
         super();
 
     }
-    connectedCallback() {
+
+    get currHours(){
+      return this.getAttribute("currhours");
+    }
+
+    get prevHours(){
+      return this.getAttribute("prevhours");
+    }
+
+    set currHours(val) {
+      this.setAttribute("currhours", val);
+    }
+
+    set prevHours(val) {
+      this.setAttribute("prevhours", val);
+    }
+
+    static get observedAttributes()  {
+      return ["prevhours", "currhours"];
+    }
+
+    attributeChangedCallback(prop, oldValue, newvalue) {
+      if (prop === 'prevhours') this.render();
+      if (prop === 'currhours') this.render();
+      
+      
+    }
+
+    render() {
       this.innerHTML = `
       
       <div class="activity-card">
-      <div style="background-color:${this.getAttribute('bgColor')};" class="activity-card__img-container" >
-        <img class="activity-card__img" src="images/${this.getAttribute('bannerImg')}" alt="Play Icon">
+      <div style="background-color:${this.getAttribute('bgcolor')};" class="activity-card__img-container" >
+        <img class="activity-card__img" src="images/${this.getAttribute('bannerimg')}" alt="Play Icon">
       </div>
       
   
@@ -20,12 +48,16 @@ class Activity extends HTMLElement {
           <img class="activity-card__content__header-container__ellipsis" src="images/icon-ellipsis.svg" alt="icon-ellipsis">
         </div>
   
-        <p id="current-hours">${this.getAttribute('currHours')} Hrs</p>
-        <p id="prev-hours">Last week - ${this.getAttribute('prevHours')}hrs</p>
+        <p id="current-hours">${this.currHours} Hrs</p>
+        <p id="prev-hours">Last week - ${this.prevHours}hrs</p>
       </div>
       
     </div>
       `
+    }
+
+    connectedCallback() {
+      this.render();
     }
 }
 
@@ -50,25 +82,29 @@ fetch('../data.json')
     for (let i in data){
       const newCard = document.createElement("app-activity");
       newCard.setAttribute("title", data[i].title);
-      newCard.setAttribute("currHours", data[i].timeframes.daily.current);
-      newCard.setAttribute("prevHours", data[i].timeframes.daily.previous);
-      newCard.setAttribute("bannerImg", imgDict[data[i].title]['image'])
-      newCard.setAttribute("bgColor", imgDict[data[i].title]['color'])
-      newCard.setAttribute("id", i);
+      newCard.setAttribute("currhours", data[i].timeframes.daily.current);
+      newCard.setAttribute("prevhours", data[i].timeframes.daily.previous);
+      newCard.setAttribute("bannerimg", imgDict[data[i].title]['image'])
+      newCard.setAttribute("bgcolor", imgDict[data[i].title]['color'])
+      newCard.setAttribute("id", data[i].title);
       cardContainer.appendChild(newCard);
 
-        console.log(data[i].title);
-        console.log(data[i].timeframes.daily.current);
-        console.log(data[i].timeframes.daily.previous);
-
-        console.log(data[i].timeframes.weekly.current);
-        console.log(data[i].timeframes.weekly.previous);
-
-        console.log(data[i].timeframes.monthly.current);
-        console.log(data[i].timeframes.monthly.previous);
-
-    }
-    
+    }   
 })
 
+const updateCardDataToWeekly = () => {
 
+fetch('../data.json')
+.then((res) => res.json())
+.then((data) => {
+
+  for (let i in data){
+
+    const cardToUpdate = document.getElementById(data[i].title);
+    cardToUpdate.setAttribute("currhours", data[i].timeframes.weekly.current);
+    cardToUpdate.setAttribute("prevhours", data[i].timeframes.weekly.previous);
+    console.log(cardToUpdate);
+    console.log(`data: ${data[i].timeframes.weekly.previous}`);
+    console.log(data[i].title);
+  }}
+  )}
