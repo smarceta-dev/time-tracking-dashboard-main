@@ -1,15 +1,25 @@
 .container {
     width: 50%;
-    height: 100vh;
+    min-height: 100vh;
     margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    flex-direction: column;
 }
 
 .inner-container {
     display: flex;
+
+    @media screen and (max-width: 1250px) {
+        flex-flow: column wrap;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        
+    }
+   
     
 }
 
@@ -28,4 +38,8 @@ footer {
 
 .user-card {
     flex: 1 0 18%;
+    @media screen and (max-width: 1250px) {
+        margin-bottom: 1rem;
+        
+    }
 }

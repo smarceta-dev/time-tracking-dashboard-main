@@ -1,14 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .container {
   width: 50%;
-  height: 100vh;
+  min-height: 100vh;
   margin: auto;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  flex-direction: column; }
 
 .inner-container {
   display: flex; }
+  @media screen and (max-width: 1250px) {
+    .inner-container {
+      flex-flow: column wrap;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem; } }
 
 footer {
   text-align: center; }
@@ -21,6 +29,9 @@ footer {
 
 .user-card {
   flex: 1 0 18%; }
+  @media screen and (max-width: 1250px) {
+    .user-card {
+      margin-bottom: 1rem; } }
 
 :root {
   --color-primary-blue: hsl(246, 80%, 60%);
@@ -81,7 +92,7 @@ body {
     background-color: var(--color-dark-blue);
     color: white;
     border-radius: 1em;
-    flex: 1 0 80%;
+    flex: 1 1 80%;
     z-index: 1;
     transform: translateY(-1rem);
     padding: 1.5rem; }
@@ -104,12 +115,12 @@ body {
   width: 20rem;
   background-color: var(--color-dark-blue);
   border-radius: 1rem;
-  box-sizing: border-box; }
-  .user-card img {
-    width: 6em;
-    height: 6em;
-    border: 0.15rem solid white;
-    border-radius: 100rem; }
+  box-sizing: border-box;
+  flex-flow: row wrap img;
+    flex-flow-width: 6em;
+    flex-flow-height: 6em;
+    flex-flow-border: 0.15rem solid white;
+    flex-flow-border-radius: 100rem; }
   .user-card__profile {
     display: flex;
     flex-direction: column;
@@ -117,9 +128,9 @@ body {
     background-color: var(--color-primary-blue);
     border-radius: 1rem;
     padding: 1.5rem;
-    flex: 1 0 70%; }
+    flex: 1 1 70%; }
   .user-card__sorting-opts {
-    flex: 1 0 30%;
+    flex: 1 1 30%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -135,3 +146,8 @@ body {
     color: white; }
   .user-card__report {
     color: var(--color-desaturated-blue); }
+
+.attribution {
+  color: white; }
+  .attribution a {
+    color: orangered; }

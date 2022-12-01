@@ -29,7 +29,7 @@
         background-color: var(--color-dark-blue);
         color: white;
         border-radius: 1em;
-        flex: 1 0 80%;
+        flex: 1 1 80%;
         z-index: 1;
         transform: translateY(-1rem);
         padding: 1.5rem;
@@ -64,6 +64,7 @@
     background-color: var(--color-dark-blue);
     border-radius: 1rem;
     box-sizing: border-box;
+    flex-flow: row wrap
 
     img {
         width: 6em;
@@ -79,12 +80,12 @@
         background-color: var(--color-primary-blue);
         border-radius: 1rem;
         padding:1.5rem;
-        flex: 1 0 70%;
+        flex: 1 1 70%;
     }
 
     &__sorting-opts {
         
-        flex: 1 0 30%;
+        flex: 1 1 30%;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -106,5 +107,12 @@
 
     &__report {
         color: var(--color-desaturated-blue);
+    }
+}
+
+.attribution{
+    color: white;
+    a {
+        color: orangered;
     }
 }
