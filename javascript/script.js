@@ -4,7 +4,6 @@ class Activity extends HTMLElement {
         super();
 
     }
-
     get currHours(){
       return this.getAttribute("currhours");
     }
@@ -92,6 +91,8 @@ fetch('../data.json')
     }   
 })
 
+
+
 const updateCardDataToWeekly = () => {
 
 fetch('../data.json')
@@ -103,8 +104,36 @@ fetch('../data.json')
     const cardToUpdate = document.getElementById(data[i].title);
     cardToUpdate.setAttribute("currhours", data[i].timeframes.weekly.current);
     cardToUpdate.setAttribute("prevhours", data[i].timeframes.weekly.previous);
-    console.log(cardToUpdate);
-    console.log(`data: ${data[i].timeframes.weekly.previous}`);
-    console.log(data[i].title);
+
   }}
   )}
+
+  const updateCardDataToDaily = () => {
+
+    fetch('../data.json')
+    .then((res) => res.json())
+    .then((data) => {
+    
+      for (let i in data){
+    
+        const cardToUpdate = document.getElementById(data[i].title);
+        cardToUpdate.setAttribute("currhours", data[i].timeframes.daily.current);
+        cardToUpdate.setAttribute("prevhours", data[i].timeframes.daily.previous);
+    
+      }}
+      )}
+
+      const updateCardDataToMonthly = () => {
+
+        fetch('../data.json')
+        .then((res) => res.json())
+        .then((data) => {
+        
+          for (let i in data){
+        
+            const cardToUpdate = document.getElementById(data[i].title);
+            cardToUpdate.setAttribute("currhours", data[i].timeframes.monthly.current);
+            cardToUpdate.setAttribute("prevhours", data[i].timeframes.monthly.previous);
+        
+          }}
+          )}
