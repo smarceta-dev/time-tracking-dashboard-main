@@ -10,6 +10,7 @@
 
 .inner-container {
     display: flex;
+ 
 
     @media screen and (max-width: 1250px) {
         flex-flow: column wrap;
@@ -29,15 +30,14 @@ footer {
 
 #card-container {
     display: flex;
-    flex-direction: row;
-    
+    flex: 1 1 82%;
     flex-wrap: wrap;
     justify-content: space-evenly;
-
+    
 }
 
 .user-card {
-    flex: 1 0 18%;
+    flex: 1 1 18%;
     @media screen and (max-width: 1250px) {
         margin-bottom: 1rem;
         
