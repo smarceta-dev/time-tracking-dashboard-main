@@ -36,4 +36,6 @@ SASS
 Solution URL: Will be updated soon after refactoring ~
 
 ## Continued development
-Going forward I plan on refactoring the Javascript so that the onclick functions follow DRY princicples. Currently they're written just to function, but for sure could be condensed in fewer lines of code. I also plan to modify the media queries so that the mid-point resolution between mobile and desktop looks cleaner (1000px mark). 
+Going forward I plan on refactoring the Javascript so that the onclick functions follow DRY princicples. Currently they're written just to function, but for sure could be condensed in fewer lines of code. 
+
+Need to find a solution to fix responsiveness at larger screens. 
